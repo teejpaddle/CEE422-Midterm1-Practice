@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>CEE 422 Exam 1 Practice</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <h1>CEE 422 <span>Exam 1 MCQ Practice</span></h1>
+    <p class="sub">Lectures 02–08 · Cost estimating</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="setup" class="card">
+    <h2>Set up a session</h2>
+    <fieldset>
+      <legend>Topics</legend>
+      <div id="topics" class="chips"></div>
+    </fieldset>
+    <fieldset>
+      <legend>Question source</legend>
+      <div id="sources" class="chips"></div>
+    </fieldset>
+    <label class="check"><input type="checkbox" id="shuffle" checked> Shuffle question order</label>
+    <label class="check"><input type="checkbox" id="wrongOnly"> Only questions I previously missed <small id="wrongCount"></small></label>
+    <div class="row">
+      <button class="btn primary" id="start">Start practice <small id="count"></small></button>
+      <button class="btn ghost" id="reset">Clear saved progress</button>
+    </div>
+  </section>
+
+  <section id="quiz" class="card" hidden>
+    <div class="progress"><div id="bar"></div></div>
+    <div class="meta">
+      <span id="pos"></span><span id="tag" class="pill"></span><span id="score"></span>
+    </div>
+    <p id="qtext" class="qtext"></p>
+    <div id="opts" class="opts" role="radiogroup"></div>
+    <div id="result" class="result" hidden></div>
+    <div class="row nav">
+      <button class="btn ghost" id="quit">End session</button>
+      <button class="btn primary" id="next" hidden>Next</button>
+    </div>
+  </section>
+
+  <section id="done" class="card" hidden>
+    <h2>Session complete</h2>
+    <p id="final" class="big"></p>
+    <div id="bysec"></div>
+    <div class="row">
+      <button class="btn primary" id="again">New session</button>
+    </div>
+  </section>
+</main>
+<script src="questions.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

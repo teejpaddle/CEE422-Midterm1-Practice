@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "Outfit";
+  src: url("fonts/Outfit-VariableFont_wght.ttf") format("truetype");
+  font-weight: 100 900;
+  font-display: swap;
+}
+:root {
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --card: #fff;
+  --ink: #1b1f2a;
+  --muted: #5d6578;
+  --line: #e1e4ee;
+  --accent: #2f5bea;
+  --accent-soft: #e8eefe;
+  --good: #1a7f4b;
+  --good-soft: #e3f5ea;
+  --bad: #c0392b;
+  --bad-soft: #fdeceb;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Outfit", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.5;
+  font-size: 17px;
+}
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 16px; }
+.top { background: var(--card); border-bottom: 1px solid var(--line); padding: 20px 0 16px; margin-bottom: 24px; }
+h1 { margin: 0; font-size: 1.6rem; font-weight: 700; }
+h1 span { font-weight: 300; color: var(--muted); }
+.sub { margin: 2px 0 0; color: var(--muted); font-size: .95rem; }
+h2 { margin: 0 0 12px; font-size: 1.2rem; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 22px; margin-bottom: 40px; }
+[hidden] { display: none !important; }
+fieldset { border: 0; padding: 0; margin: 0 0 16px; }
+legend { font-weight: 600; margin-bottom: 8px; padding: 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: inherit; font-size: .92rem; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--accent-soft); border-color: var(--accent); color: var(--accent); font-weight: 500; }
+.check { display: block; margin: 8px 0; cursor: pointer; }
+.check small, .btn small { color: var(--muted); }
+.btn.primary small { color: #dfe6ff; }
+.row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+.btn { font: inherit; font-weight: 500; padding: 10px 18px; border-radius: 10px; border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn.primary:disabled { opacity: .45; cursor: not-allowed; }
+.btn:focus-visible, .chip:focus-visible, .opt:focus-visible { outline: 3px solid #9db4ff; outline-offset: 2px; }
+.nav { justify-content: space-between; }
+.progress { height: 6px; background: var(--line); border-radius: 3px; overflow: hidden; margin-bottom: 12px; }
+#bar { height: 100%; width: 0; background: var(--accent); transition: width .2s; }
+.meta { display: flex; align-items: center; gap: 10px; font-size: .9rem; color: var(--muted); margin-bottom: 12px; }
+.meta #score { margin-left: auto; }
+.pill { background: var(--accent-soft); color: var(--accent); padding: 1px 10px; border-radius: 999px; font-size: .8rem; }
+.qtext { font-size: 1.15rem; font-weight: 500; margin: 0 0 16px; white-space: pre-line; }
+.opts { display: grid; gap: 10px; }
+.opt { display: flex; gap: 12px; text-align: left; font: inherit; width: 100%; padding: 12px 14px; border: 1.5px solid var(--line); border-radius: 10px; background: #fff; color: var(--ink); cursor: pointer; }
+.opt:hover:not(:disabled) { border-color: var(--accent); background: var(--accent-soft); }
+.opt:disabled { cursor: default; }
+.opt .k { font-weight: 700; color: var(--accent); min-width: 1.2em; }
+.opt.correct { border-color: var(--good); background: var(--good-soft); }
+.opt.wrong { border-color: var(--bad); background: var(--bad-soft); }
+.result { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 14px; }
+.verdict { font-weight: 700; margin: 0 0 8px; }
+.verdict.ok { color: var(--good); }
+.verdict.no { color: var(--bad); }
+.exp { margin: 6px 0; padding-left: 12px; border-left: 3px solid var(--line); font-size: .95rem; }
+.exp.c { border-color: var(--good); }
+.exp b.lab { font-weight: 600; }
+.big { font-size: 2rem; font-weight: 700; margin: 0 0 12px; }
+.sec { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: .95rem; }
+code { background: #eef0f6; padding: 1px 5px; border-radius: 4px; }
+@media (max-width: 480px) { body { font-size: 16px; } .card { padding: 16px; } }
